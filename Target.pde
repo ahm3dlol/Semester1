@@ -1,8 +1,7 @@
 public class Target {
   public PVector pos;
   private final int SIZE = 65;
-int x;
-int y;
+
 
   public Target(int x, int y) {
     pos = new PVector(x, y);
