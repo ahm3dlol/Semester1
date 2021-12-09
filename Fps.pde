@@ -11,7 +11,7 @@ void setup() {
   size(600, 600);
   fill(0);
   spawnTargets();
-    frameRate(60);
+    frameRate(60);// wanted game to run more smoother
     begin = millis();  
 
 }
@@ -21,10 +21,10 @@ void setup() {
 void draw() {
   background(255);
   fill(112, 109, 101);
-  System.out.println("Score: "+score);
+  System.out.println("Score: "+score);//display score
   text("Score: "+score,500, 30); 
     if (time > 0){  
-    time = duration - (millis() - begin)/1000;
+    time = duration - (millis() - begin)/1000;//stopwatch
     text("Time: "+time, 20, 30);
     }
      if(time==0){ //Check if the timer finished countdown
@@ -34,7 +34,7 @@ void draw() {
       noLoop();
      }
      
-  rect(0, 0, width, borderStroke); // Top
+  rect(0, 0, width, borderStroke); // border creation
   rect(width-borderStroke, 0, borderStroke, height); // Right
   rect(0, height-borderStroke, width, borderStroke); // Bottom
   rect(0, 0, borderStroke, height); // Left
@@ -42,8 +42,8 @@ void draw() {
     targets[i].show();
   }
 }
-void mousePressed() {
-  if (overRect( targets[0].pos.x, targets[0].pos.y, 65, 65)) {
+void mousePressed() {  //when clicked change positions  
+  if (overRect( targets[0].pos.x, targets[0].pos.y, 65, 65)) {  
     targets[0].pos.x = (int)random(width-35);
     targets[0].pos.y = (int)random(width-35);
           score++;
@@ -60,7 +60,7 @@ void mousePressed() {
   }
 }
 
-public boolean overRect(float x, float y, int w, int h) {
+public boolean overRect(float x, float y, int w, int h) { //checks if mouse is over object
   if (mouseX >= x && mouseX <= x+w &&
     mouseY >= y && mouseY <= y+h) {
     return true;

@@ -9,7 +9,7 @@ public class Target {
 
   public void show() {
     fill(169, 189, 138);
-    rect(pos.x, pos.y, SIZE, SIZE);
+    rect(pos.x, pos.y, SIZE, SIZE);//spawns rectangles
   }
   
 }
